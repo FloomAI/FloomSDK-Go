@@ -51,4 +51,4 @@ func main() {
 
 This README provides a concise yet comprehensive introduction to Floom and its Go SDK. It includes installation instructions, a basic usage example, links to further documentation, contribution guidelines, and licensing information. The structure is designed to be user-friendly and to enhance the visibility of your project.
 
-For more informatiom, visit us at https://floom.ai.
+For more information, visit us at https://floom.ai.
