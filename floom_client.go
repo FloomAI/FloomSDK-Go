@@ -126,7 +126,7 @@ func main() {
 		fmt.Printf("Chat ID: %s\n", response.ChatID)
 		fmt.Printf("Processing Time: %d\n", response.ProcessingTime)
 		for _, value := range response.Values {
-			fmt.Printf("Value - Type: %d, Format: %s, Value: %s, B64: %s, URL: %s\n", value.Type, value.Format, value.Value)
+			fmt.Printf("Value - Type: %d, Format: %s, Value: %s\n", value.Type, value.Format, value.Value)
 		}
 	}
 }
