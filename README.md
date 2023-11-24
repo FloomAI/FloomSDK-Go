@@ -4,6 +4,7 @@
 
 **Floom Go SDK** - A Go library for interacting with [Floom](https://floom.ai), an AI Orchestration platform that empowers Developers and DevOps.
 
+version 1.0.2
 </div>
 
 ## About Floom
