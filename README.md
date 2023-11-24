@@ -35,17 +35,29 @@ import (
 
 func main() {
     // Initialize FloomClient
-    floomClient := floom.NewFloomClient("your_endpoint", "your_api_key")
+	floomClient := NewFloomClient("http://127.0.0.1:80", "COqRR8qLz4RrXygsDoYMXRvDJheXj3MO")
 
-    // Example: Running a pipeline
-    response, err := floomClient.Run("your_pipeline_id", "your_chat_id", "your_input", nil, floom.Base64)
-    if err != nil {
-        fmt.Println("Error:", err)
-        return
-    }
+	// Hardcoded values for demonstration
+	pipelineID := "docs-pipeline-v1"
+	chatID := "abcdefghijklmnop"
+	input := "Who was the first US president?"
 
-    // Process the response
-    fmt.Printf("Response: %+v\n", response)
+	// Run the FloomClient with hardcoded values
+	response, err := floomClient.Run(pipelineID, chatID, input, nil, Base64)
+
+	// Print the response and error to the console
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+	} else {
+		// Print the properties of FloomResponse
+		fmt.Printf("Pipeline Response Valid")
+		fmt.Printf("Message ID: %s\n", response.MessageID)
+		fmt.Printf("Chat ID: %s\n", response.ChatID)
+		fmt.Printf("Processing Time: %d\n", response.ProcessingTime)
+		for _, value := range response.Values {
+			fmt.Printf("Value - Type: %d, Format: %s, Value: %s\n", value.Type, value.Format, value.Value)
+		}
+	}
 }
 ```
 

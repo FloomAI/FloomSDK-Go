@@ -1,4 +1,4 @@
-package main
+package floom
 
 import (
 	"bytes"
@@ -102,31 +102,4 @@ func (c *FloomClient) Run(pipelineID, chatID string, input interface{}, variable
 	errorMessage := fmt.Sprintf("request failed with status %d: %s", response.StatusCode, string(bodyBytes))
 	fmt.Println(errorMessage) // You can log it or just return as an error
 	return nil, fmt.Errorf(errorMessage)
-}
-
-func main() {
-	// Initialize FloomClient
-	floomClient := NewFloomClient("http://127.0.0.1:80", "COqRR8qLz4RrXygsDoYMXRvDJheXj3MO")
-
-	// Hardcoded values for demonstration
-	pipelineID := "docs-pipeline-v1"
-	chatID := "abcdefghijklmnop"
-	input := "Who was the first US president?"
-
-	// Run the FloomClient with hardcoded values
-	response, err := floomClient.Run(pipelineID, chatID, input, nil, Base64)
-
-	// Print the response and error to the console
-	if err != nil {
-		fmt.Printf("Error: %v\n", err)
-	} else {
-		// Print the properties of FloomResponse
-		fmt.Printf("Pipeline Response Valid")
-		fmt.Printf("Message ID: %s\n", response.MessageID)
-		fmt.Printf("Chat ID: %s\n", response.ChatID)
-		fmt.Printf("Processing Time: %d\n", response.ProcessingTime)
-		for _, value := range response.Values {
-			fmt.Printf("Value - Type: %d, Format: %s, Value: %s\n", value.Type, value.Format, value.Value)
-		}
-	}
 }
