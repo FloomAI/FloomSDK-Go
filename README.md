@@ -35,8 +35,8 @@ import (
 )
 
 func main() {
-    // Initialize FloomClient
-	floomClient := NewFloomClient("http://127.0.0.1:80", "COqRR8qLz4RrXygsDoYMXRvDJheXj3MO")
+// Initialize FloomClient
+	floomClient := floom.NewFloomClient("http://127.0.0.1:80", "COqRR8qLz4RrXygsDoYMXRvDJheXj3MO")
 
 	// Hardcoded values for demonstration
 	pipelineID := "docs-pipeline-v1"
@@ -44,7 +44,7 @@ func main() {
 	input := "Who was the first US president?"
 
 	// Run the FloomClient with hardcoded values
-	response, err := floomClient.Run(pipelineID, chatID, input, nil, Base64)
+	response, err := floomClient.Run(pipelineID, chatID, input, nil, floom.Base64)
 
 	// Print the response and error to the console
 	if err != nil {
